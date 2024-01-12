@@ -59,7 +59,7 @@ A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 <%
-    if(A%2 != 0){
+    if(intValeur1%2 != 0){
       out.print("A est IMPAIR");
     } else {
       out.print("A est PAIR");
