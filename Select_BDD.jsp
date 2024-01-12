@@ -161,7 +161,7 @@
             pstmt4.executeUpdate();
         }
     } catch (SQLException e) {
-        out.print(e)
+        out.print(e);
     } finally {
         if (pstmt4 != null) pstmt4.close();
         if (conn4 != null) conn4.close();
