@@ -67,7 +67,7 @@
 <%
     for(int i = x; i > 0; i--){
        for(int j = 1; j < i; j++){
-          %>&nbsp;<%
+          %>&nbsp;&nbsp;<%
        }
        for (int k = i; k<=x; k++){
           out.print("*");
@@ -98,7 +98,7 @@
 <%
     for(int i = x; i > 0; i--){
            for(int j = 1; j < i; j++){
-              %>&nbsp;<%
+              %>&nbsp;&nbsp;<%
            }
            for (int k = i; k<=x; k++){
               out.print("*");
@@ -111,7 +111,7 @@
 
         for(int a = 0; a < x; a++){
            for (int z = 1; z < a + 1; z++){
-              %>&nbsp;<%
+              %>&nbsp;&nbsp;<%
            }
            for(int b = x; b > a; b--){
               out.print("*");
