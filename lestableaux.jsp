@@ -31,7 +31,7 @@
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 <p> Chiffre 1 : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
-<p> Chiffre 2 : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
+<p> Chiffre 2 : <% out.println(Integer.parseInt(tableauDeChiffres[1])); %> </p>
 
 <%
     out.println(Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChiffres[1]));
@@ -51,7 +51,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <h2>Exercice 4 : La valeur maximum</h2>
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 <%
-    int max = 0;
+    int max = Integer.parseInt(tableauDeChiffres[i]);
      for(int i = 0; i <= tableauDeChiffres.length - 1; i++){
         if(Integer.parseInt(tableauDeChiffres[i]) > max){
             max = Integer.parseInt(tableauDeChiffres[i]);
@@ -63,7 +63,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <h2>Exercice 5 : La valeur minimale</h2>
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
 <%
-    int min = 0;
+    int min = Integer.parseInt(tableauDeChiffres[i]);
     for(int i = 0; i <= tableauDeChiffres.length - 1; i++){
         if(Integer.parseInt(tableauDeChiffres[i]) < min){
             min = Integer.parseInt(tableauDeChiffres[i]);
