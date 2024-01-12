@@ -67,7 +67,7 @@
 <%
     for(int i = x; i > 0; i--){
        for(int j = 1; j < i; j++){
-          out.print(" ");
+          %>&nbsp;<%
        }
        for (int k = i; k<=x; k++){
           out.print("*");
@@ -82,7 +82,7 @@
 <%
     for(int i = 1; i <= x; i++){
         for(int j = x-i; j > 0; j--){
-           out.print(" ");
+           %>&nbsp;<%
         }
         for (int k = 1; k<=i; k++){
            out.print("* ");
@@ -94,20 +94,38 @@
 <h2>Exercice 6 : Le demi losange</h2>
 <p>Ecrire le code afin de produire un losange</p>
 <p> La valeur est <% out.print(x); %> </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
-<p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
+<%
+    for(int i = x; i > 0; i--){
+           for(int j = 1; j < i; j++){
+              %>&nbsp;<%
+           }
+           for (int k = i; k<=x; k++){
+              out.print("*");
+           }
+           %></br><%
+        }
 
+        %></br><%
+
+
+        for(int a = 0; a < x; a++){
+           for (int z = 1; z < a + 1; z++){
+              %>&nbsp;<%
+           }
+           for(int b = x; b > a; b--){
+              out.print("*");
+           }
+           %></br><%
+        }
+%>
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
 <p> La valeur est <% out.print(x); %> </p>
 <%
-    for(int i = x; i > 0; i--){
-       for(int j = 1; j < i; j++){
-          out.print(" ");
-       }
-       for (int k = i; k<=x; k++){
-          out.print("*");
-       }
+    for(int i = 1; i <= x; i++){
+       out.print(x + "*" + i + " =" ); 
+       out.print(x*i); 
+
        %></br><%
     }
 %>
