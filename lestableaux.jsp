@@ -23,7 +23,7 @@
     
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
-<p> Chiffre 1 : : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
+<p> Chiffre 1 : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
 <%
     out.println(Integer.parseInt(tableauDeChiffres[0]) * Integer.parseInt(tableauDeChiffres[0]));
 %>

@@ -41,15 +41,116 @@
 
 <h2>Exercice 1 : Les films entre 2000 et 2015</h2>
 <p>Extraire les films dont l'année est supérieur à l'année 2000 et inférieur à 2015.</p>
+<%
+    // Établir la connexion
+    Connection conn = DriverManager.getConnection(url, user, password);
+    // Exemple de requête SQL
+    String sql = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
+    PreparedStatement pstmt = conn.prepareStatement(sql);
+    ResultSet rs = pstmt.executeQuery();
+
+    // Afficher les résultats (à adapter selon vos besoins)
+    while (rs.next()) {
+        String colonne1 = rs.getString("idFilm");
+        String colonne2 = rs.getString("titre");
+        String colonne3 = rs.getString("année");
+        // Faites ce que vous voulez avec les données...
+        //Exemple d'affichage de 2 colonnes
+        out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
+    }
+
+    // Fermer les ressources 
+    rs.close();
+    pstmt.close();
+    conn.close();
+%>
 
 <h2>Exercice 2 : Année de recherche</h2>
 <p>Créer un champ de saisie permettant à l'utilisateur de choisir l'année de sa recherche.</p>
+<form action="#" method="post">
+    <p>Année du film : <input type="text" id="inputValeur" name="chaine">
+    <p><input type="submit" value="Chercher">
+</form>
+<% 
+    String chaine = request.getParameter("chaine");
+    if (chaine != null) { 
+        // Établir la connexion
+        Connection conn = DriverManager.getConnection(url, user, password);
+        // Exemple de requête SQL
+        String sql = "SELECT idFilm, titre, année FROM Film WHERE année = " + chaine;
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
 
+        // Afficher les résultats (à adapter selon vos besoins)
+        while (rs.next()) {
+            String colonne1 = rs.getString("idFilm");
+            String colonne2 = rs.getString("titre");
+            String colonne3 = rs.getString("année");
+            // Faites ce que vous voulez avec les données...
+            //Exemple d'affichage de 2 colonnes
+            out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
+        }
+
+        // Fermer les ressources 
+        rs.close();
+        pstmt.close();
+        conn.close();
+    }
+%>
+    
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
+<form action="#" method="post">
+    <p>ID : <input type="text" id="inputValeur" name="id">
+    <p>Titre : <input type="text" id="inputValeur" name="titre">
+    <p><input type="submit" value="Modifier le film">
+</form>
+<% 
+    String id = request.getParameter("id");
+    String titre = request.getParameter("titre");
 
-<h2>Exercice 4 : La valeur maximum</h2>
+    if (id != null && titre != null && annee != null) { 
+        // Établir la connexion
+        Connection conn = DriverManager.getConnection(url, user, password);
+        // Exemple de requête SQL
+        String sql = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id")"; 
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        // Fermer les ressources 
+        rs.close();
+        pstmt.close();
+        conn.close();
+    }
+%>
+
+
+<h2>Exercice 4 : Ajout d'un film dans la BDD</h2>
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
+<p>Ajout d'un film dans la BDD</p>
+<form action="#" method="post">
+    <p>ID : <input type="text" id="inputValeur" name="id">
+    <p>Titre : <input type="text" id="inputValeur" name="titre">
+    <p>Année : <input type="text" id="inputValeur" name="annee">
+    <p><input type="submit" value="Ajouter le film">
+</form>
+<% 
+    String id = request.getParameter("id");
+    String titre = request.getParameter("titre");
+    String annee = request.getParameter("annee");
+
+    if (id != null && titre != null && annee != null) { 
+        // Établir la connexion
+        Connection conn = DriverManager.getConnection(url, user, password);
+        // Exemple de requête SQL
+        String sql = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id + ", " + titre + ", " + annee ")"; 
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+        // Fermer les ressources 
+        rs.close();
+        pstmt.close();
+        conn.close();
+    }
+%>
 
 </body>
 </html>
