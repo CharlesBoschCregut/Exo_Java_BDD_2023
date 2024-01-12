@@ -138,24 +138,20 @@
     <p>Année : <input type="text" id="inputValeur" name="annee4">
     <p><input type="submit" value="Ajouter le film">
 </form>
-<% 
-    String id4 = request.getParameter("id4");
-    String titre4 = request.getParameter("titre4");
-    String annee4 = request.getParameter("annee4");
-
-    if (id4 != null && titre4 != null && annee4 != null) { 
-        // Établir la connexion
+<%
+    String idFilm = request.getParameter("idFilm");
+    String titre = request.getParameter("titre");
+    String annee = request.getParameter("annee");
+    if (idFilm != null && titre != null && annee != null && genre != null) {
         Connection conn4 = DriverManager.getConnection(url, user, password);
-        // Exemple de requête SQL
+        String sql4 = "INSERT INTO Film (idFilm, titre, année, genre) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstmt4 = conn.prepareStatement(sql4)
+        pstmt4.setString(1, idFilm);
+        pstmt4.setString(2, titre);
+        pstmt4.setString(3, annee);
+        pstmt4.setString(4, genre);     
 
-        String sql4 = "INSERT INTO Film(idFilm, titre, année, genre) VALUES(?, ?, ?, ?)"; 
-        PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
-        pstmt4.setString(1, id4);
-        pstmt4.setString(2, titre4);
-        pstmt4.setString(3, annee4);
-        pstmt4.setString(4, "Complot");
-        pstmt4.executeUpdate();
-        
+        int rowsInserted = pstmt4.executeUpdate();
         pstmt4.close();
         conn4.close();
     }
