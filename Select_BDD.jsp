@@ -101,19 +101,19 @@
 <h2>Exercice 3 : Modification du titre du film</h2>
 <p>Créer un fichier permettant de modifier le titre d'un film sur la base de son ID (ID choisi par l'utilisateur)</p>
 <form action="#" method="post">
-    <p>ID : <input type="text" id="inputValeur" name="id">
-    <p>Titre : <input type="text" id="inputValeur" name="titre">
+    <p>ID : <input type="text" id="inputValeur" name="id3">
+    <p>Titre : <input type="text" id="inputValeur" name="titre3">
     <p><input type="submit" value="Modifier le film">
 </form>
 <% 
-    String id = request.getParameter("id");
-    String titre = request.getParameter("titre");
+    String id3 = request.getParameter("id3");
+    String titre3 = request.getParameter("titre3");
 
-    if (id != null && titre != null) { 
+    if (id3 != null && titre3 != null) { 
         // Établir la connexion
         Connection conn3 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql3 = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id + ")"; 
+        String sql3 = "UPDATE Film SET titre = " + titre3 + " WHERE  idFilm = " + id3 + ")"; 
         PreparedStatement pstmt3 = conn3.prepareStatement(sql3);
         ResultSet rs3 = pstmt3.executeQuery();
         // Fermer les ressources 
@@ -126,21 +126,21 @@
 <p>Créer un formulaire pour saisir un nouveau film dans la base de données</p>
 <p>Ajout d'un film dans la BDD</p>
 <form action="#" method="post">
-    <p>ID : <input type="text" id="inputValeur" name="id">
-    <p>Titre : <input type="text" id="inputValeur" name="titre">
-    <p>Année : <input type="text" id="inputValeur" name="annee">
+    <p>ID : <input type="text" id="inputValeur" name="id4">
+    <p>Titre : <input type="text" id="inputValeur" name="titre4">
+    <p>Année : <input type="text" id="inputValeur" name="annee4">
     <p><input type="submit" value="Ajouter le film">
 </form>
 <% 
-    String id4 = request.getParameter("id");
-    String titre4 = request.getParameter("titre");
-    String annee = request.getParameter("annee");
+    String id4 = request.getParameter("id4");
+    String titre4 = request.getParameter("titre4");
+    String annee4 = request.getParameter("annee4");
 
-    if (id != null && titre != null && annee != null) { 
+    if (id4 != null && titre4 != null && annee4 != null) { 
         // Établir la connexion
         Connection conn4 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id4 + ", " + titre4 + ", " + annee + ")"; 
+        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id4 + ", " + titre4 + ", " + annee4 + ")"; 
         PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
         ResultSet rs4 = pstmt4.executeQuery();
         // Fermer les ressources 
