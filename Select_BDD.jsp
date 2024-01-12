@@ -109,11 +109,11 @@
     String id = request.getParameter("id");
     String titre = request.getParameter("titre");
 
-    if (id != null && titre != null && annee != null) { 
+    if (id != null && titre != null) { 
         // Établir la connexion
         Connection conn3 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql3 = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id")"; 
+        String sql3 = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id + ")"; 
         PreparedStatement pstmt3 = conn3.prepareStatement(sql3);
         ResultSet rs3 = pstmt.executeQuery();
         // Fermer les ressources 
@@ -140,7 +140,7 @@
         // Établir la connexion
         Connection conn4 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id4 + ", " + titre4 + ", " + annee ")"; 
+        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id4 + ", " + titre4 + ", " + annee + ")"; 
         PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
         ResultSet rs4 = pstmt4.executeQuery();
         // Fermer les ressources 
