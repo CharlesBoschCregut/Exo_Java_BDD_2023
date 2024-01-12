@@ -38,8 +38,8 @@
 <%
     int compteur = 0;
 
-    for(int i = 0; i < xd.length(); i++) {
-        if(xd.charAt(i) == 'e') {
+    for(int i = 0; i < chaine.length(); i++) {
+        if(chaine.charAt(i) == 'e') {
             compteur++;
         }
     }
@@ -58,8 +58,8 @@ u</br>
 r</p>
 
 <%
-    for(int i = 0; i < xd.length(); i++) {
-        out.print(xd.charAt(i));
+    for(int i = 0; i < chaine.length(); i++) {
+        out.print(chaine.charAt(i));
         %></br><%
     }
 %>
@@ -71,11 +71,11 @@ L'hiver</br>
 sera</br>
 pluvieux</p>
 <%
-    for(int i = 0; i < xd.length(); i++) {
-       if(xd.charAt(i) == ' ') {
+    for(int i = 0; i < chaine.length(); i++) {
+       if(chaine.charAt(i) == ' ') {
           %></br><%
        } else {
-          out.print(xd.charAt(i));
+          out.print(chaine.charAt(i));
        }
 
     }
@@ -85,9 +85,9 @@ pluvieux</p>
 Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 <%
-    for(int i = 0; i < xd.length(); i++) {
+    for(int i = 0; i < chaine.length(); i++) {
        if(i%2 == 0) {
-          out.print(xd.charAt(i));
+          out.print(chaine.charAt(i));
        }
     }
 %>
@@ -97,8 +97,8 @@ Lhvrsr lvex</p>
 Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
 <%
-    for(int i = xd.length() -1; i >= 0; i--) {
-       out.print(xd.charAt(i));
+    for(int i = chaine.length() -1; i >= 0; i--) {
+       out.print(chaine.charAt(i));
     }
 %>
 <h2>Exercice 6 : Consonnes et voyelles</h2>
@@ -115,8 +115,8 @@ xueivulp ares revih'l</p>
     chars.add('y');
 
 
-    for(int i = 0; i < xd.length(); i++) {
-        if(chars.contains(xd.charAt(i))) {
+    for(int i = 0; i < chaine.length(); i++) {
+        if(chars.contains(chaine.charAt(i))) {
             compteurA++;
         } else {
           compteurB++;
