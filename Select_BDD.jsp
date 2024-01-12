@@ -43,26 +43,26 @@
 <p>Extraire les films dont l'année est supérieur à l'année 2000 et inférieur à 2015.</p>
 <%
     // Établir la connexion
-    Connection conn = DriverManager.getConnection(url, user, password);
+    Connection conn1 = DriverManager.getConnection(url, user, password);
     // Exemple de requête SQL
-    String sql = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
-    PreparedStatement pstmt = conn.prepareStatement(sql);
-    ResultSet rs = pstmt.executeQuery();
+    String sql1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
+    PreparedStatement pstmt1 = conn1.prepareStatement(sql1);
+    ResultSet rs1 = pstmt.executeQuery();
 
     // Afficher les résultats (à adapter selon vos besoins)
-    while (rs.next()) {
-        String colonne1 = rs.getString("idFilm");
-        String colonne2 = rs.getString("titre");
-        String colonne3 = rs.getString("année");
+    while (rs1.next()) {
+        String colonne1 = rs1.getString("idFilm");
+        String colonne2 = rs1.getString("titre");
+        String colonne3 = rs1.getString("année");
         // Faites ce que vous voulez avec les données...
         //Exemple d'affichage de 2 colonnes
         out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
     }
 
     // Fermer les ressources 
-    rs.close();
-    pstmt.close();
-    conn.close();
+    rs1.close();
+    pstmt1.close();
+    conn1.close();
 %>
 
 <h2>Exercice 2 : Année de recherche</h2>
@@ -75,26 +75,26 @@
     String chaine = request.getParameter("chaine");
     if (chaine != null) { 
         // Établir la connexion
-        Connection conn = DriverManager.getConnection(url, user, password);
+        Connection conn2 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql = "SELECT idFilm, titre, année FROM Film WHERE année = " + chaine;
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        String sql2 = "SELECT idFilm, titre, année FROM Film WHERE année = " + chaine;
+        PreparedStatement pstmt2 = conn2.prepareStatement(sql2);
+        ResultSet rs2 = pstmt.executeQuery();
 
         // Afficher les résultats (à adapter selon vos besoins)
-        while (rs.next()) {
-            String colonne1 = rs.getString("idFilm");
-            String colonne2 = rs.getString("titre");
-            String colonne3 = rs.getString("année");
+        while (rs2.next()) {
+            String colonne1 = rs2.getString("idFilm");
+            String colonne2 = rs2.getString("titre");
+            String colonne3 = rs2.getString("année");
             // Faites ce que vous voulez avec les données...
             //Exemple d'affichage de 2 colonnes
             out.println("id : " + colonne1 + ", titre : " + colonne2 + ", année : " + colonne3 + "</br>");
         }
 
         // Fermer les ressources 
-        rs.close();
-        pstmt.close();
-        conn.close();
+        rs2.close();
+        pstmt2.close();
+        conn2.close();
     }
 %>
     
@@ -111,15 +111,13 @@
 
     if (id != null && titre != null && annee != null) { 
         // Établir la connexion
-        Connection conn = DriverManager.getConnection(url, user, password);
+        Connection conn3 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id")"; 
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        String sql3 = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id")"; 
+        PreparedStatement pstmt3 = conn3.prepareStatement(sql3);
+        ResultSet rs3 = pstmt.executeQuery();
         // Fermer les ressources 
-        rs.close();
-        pstmt.close();
-        conn.close();
+
     }
 %>
 
@@ -134,21 +132,21 @@
     <p><input type="submit" value="Ajouter le film">
 </form>
 <% 
-    String id = request.getParameter("id");
-    String titre = request.getParameter("titre");
+    String id4 = request.getParameter("id");
+    String titre4 = request.getParameter("titre");
     String annee = request.getParameter("annee");
 
     if (id != null && titre != null && annee != null) { 
         // Établir la connexion
-        Connection conn = DriverManager.getConnection(url, user, password);
+        Connection conn4 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
-        String sql = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id + ", " + titre + ", " + annee ")"; 
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        ResultSet rs = pstmt.executeQuery();
+        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(" + id4 + ", " + titre4 + ", " + annee ")"; 
+        PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
+        ResultSet rs4 = pstmt4.executeQuery();
         // Fermer les ressources 
-        rs.close();
-        pstmt.close();
-        conn.close();
+        rs4.close();
+        pstmt4.close();
+        conn4.close();
     }
 %>
 
