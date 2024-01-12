@@ -28,20 +28,65 @@
         <% } else { %>
             <p>Valeur 1 est égale à Valeur 2.</p>
         <% } %>
-   
+<% } %>   
     
 <h2>Exercice 1 : Comparaison 1</h2>
 <p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
 A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
-Exemple :</br>
-A = 10</br>
-B = 20</br>
-C = 15</br>
-Oui C est compris entre A et B</p>
+<form action="#" method="post">
+    <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeura">
+    <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeurb">
+    <p>Saisir la valeur 3 : <input type="text" id="inputValeur" name="valeurc">
+    <p><input type="submit" value="Afficher">
+</form>
+<% String valeura = request.getParameter("valeura"); %>
+<% String valeurb = request.getParameter("valeurb"); %>
+<% String valeurc = request.getParameter("valeurc"); %>
+
+<%-- Vérification de la condition entre les deux valeurs --%>
+<% if (valeura != null && valeurb != null && valuerc != null) { %>
+    <% int A = Integer.parseInt(valeura); %>
+    <% int B = Integer.parseInt(valeurb); %>
+    <% int C = Integer.parseInt(valeurc); %>
+<%
+    boolean res = false;
+
+    if(C > A){
+       if(C < B){
+          res = true;
+       }
+    }
+
+    if(C > B){
+       if(C < A){
+          res = true;
+       }
+    }
+
+    if(res){
+       out.print("Oui, la valeur C est entre la valeur A et la valeur B");
+    } else {
+       out.print("Non, la valeur C n'est pas entre la valeur A et la valeur B");
+    }
+%>
+<% } %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
-
+<form action="#" method="post">
+    <p>Saisir la valeur : <input type="text" id="inputValeur" name="valeurp">
+    <p><input type="submit" value="Afficher">
+</form>
+<% String valeurp = request.getParameter("valeurp"); %>
+<% if (valeurp) { %>
+    <% int P = Integer.parseInt(valeurp); %>
+<%
+    if(P%2 != 0){
+      out.print("IMPAIR");
+    } else {
+      out.print("PAIR");
+    }
+%>
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
