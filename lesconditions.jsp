@@ -39,6 +39,10 @@
 <h2>Exercice 1 : Comparaison 1</h2>
 <p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
 A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
+<p> A : <% out.print(intValeur1); %> </p>
+<p> B : <% out.print(intValeur2); %> </p>
+<p> C : <% out.print(intValeur3); %> </p>
+
 <%
     boolean res = false;
 
@@ -63,6 +67,7 @@ A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
+<p> A : <% out.print(intValeur1); %> </p>
 <%
     if(intValeur1%2 != 0){
       %> <p> <% out.print("A est IMPAIR"); %> </p> <%
