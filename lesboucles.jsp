@@ -30,11 +30,10 @@
 <p> La valeur est <% out.print(x); %> </p>
 <%
     for(int i = 0; i < x; i++){
-       for(int j = 1; j < x; j++){
+       for(int j = 0; j < x; j++){
           out.print("*");
        }
        %></br><%
-       out.print("*");
     }
 %>
 
