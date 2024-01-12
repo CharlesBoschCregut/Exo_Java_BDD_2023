@@ -27,13 +27,13 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
-<p> La valeur est <% valeur %> </p>
+<p> La valeur est <% out.print(valeur) %> </p>
 <%
     for(int i = 1; i < x; i++){
        for(int j = 1; j < x; j++){
-          System.err.print("*");
+          out.print("*");
        }
-       System.err.println("*");
+       out.println("*");
     }
 
     sc.close();
