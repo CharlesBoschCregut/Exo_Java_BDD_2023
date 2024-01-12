@@ -8,18 +8,20 @@
 <form action="#" method="post">
     <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeur1">
     <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeur2">
+    <p>Saisir la valeur 3 : <input type="text" id="inputValeur" name="valeur3">
     <p><input type="submit" value="Afficher">
 </form>
 <%-- Récupération des valeurs --%>
     <% String valeur1 = request.getParameter("valeur1"); %>
     <% String valeur2 = request.getParameter("valeur2"); %>
+    <% String valeur3 = request.getParameter("valeurc"); %>
 
     <%-- Vérification de la condition entre les deux valeurs --%>
-    <% if (valeur1 != null && valeur2 != null) { %>
+    <% if (valeur1 != null && valeur2 != null && valeur3 != null) { %>
         <%-- Conversion des valeurs en entiers pour la comparaison --%>
         <% int intValeur1 = Integer.parseInt(valeur1); %>
         <% int intValeur2 = Integer.parseInt(valeur2); %>
-        
+        <% int intValeur3 = Integer.parseInt(valeur3); %>
         <%-- Condition if pour comparer les valeurs --%>
         <% if (intValeur1 > intValeur2) { %>
             <p>Valeur 1 est supérieure à Valeur 2.</p>
@@ -27,38 +29,22 @@
             <p>Valeur 1 est inférieure à Valeur 2.</p>
         <% } else { %>
             <p>Valeur 1 est égale à Valeur 2.</p>
-        <% } %>
-<% } %>   
-    
+        <% } %>  
+
 <h2>Exercice 1 : Comparaison 1</h2>
 <p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (des chiffres),</br>
 A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
-<form action="#" method="post">
-    <p>Saisir la valeur 1 : <input type="text" id="inputValeur" name="valeura">
-    <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeurb">
-    <p>Saisir la valeur 3 : <input type="text" id="inputValeur" name="valeurc">
-    <p><input type="submit" value="Afficher">
-</form>
-<% String valeura = request.getParameter("valeura"); %>
-<% String valeurb = request.getParameter("valeurb"); %>
-<% String valeurc = request.getParameter("valeurc"); %>
-
-<%-- Vérification de la condition entre les deux valeurs --%>
-<% if (valeura != null && valeurb != null && valuerc != null) { %>
-    <% int A = Integer.parseInt(valeura); %>
-    <% int B = Integer.parseInt(valeurb); %>
-    <% int C = Integer.parseInt(valeurc); %>
 <%
     boolean res = false;
 
-    if(C > A){
-       if(C < B){
+    if(intValeur3 > intValeur1){
+       if(intValeur3 < intValeur2){
           res = true;
        }
     }
 
-    if(C > B){
-       if(C < A){
+    if(intValeur3 > intValeur2){
+       if(intValeur3 < intValeur1){
           res = true;
        }
     }
@@ -69,22 +55,14 @@ A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
        out.print("Non, la valeur C n'est pas entre la valeur A et la valeur B");
     }
 %>
-<% } %>
 
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
-<form action="#" method="post">
-    <p>Saisir la valeur : <input type="text" id="inputValeur" name="valeurp">
-    <p><input type="submit" value="Afficher">
-</form>
-<% String valeurp = request.getParameter("valeurp"); %>
-<% if (valeurp) { %>
-    <% int P = Integer.parseInt(valeurp); %>
 <%
-    if(P%2 != 0){
-      out.print("IMPAIR");
+    if(A%2 != 0){
+      out.print("A est IMPAIR");
     } else {
-      out.print("PAIR");
+      out.print("A est PAIR");
     }
 %>
 <% } %>
