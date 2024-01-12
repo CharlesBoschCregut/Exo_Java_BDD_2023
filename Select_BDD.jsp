@@ -148,12 +148,14 @@
         Connection conn4 = DriverManager.getConnection(url, user, password);
         // Exemple de requête SQL
 
-        String sql4 = "INSERT INTO Film(idFilm, titre, année) VALUES(?, ?, ?)"; 
+        String sql4 = "INSERT INTO Film(idFilm, titre, année, genre) VALUES(?, ?, ?, ?)"; 
         PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
         pstmt4.setString(1, id4);
         pstmt4.setString(2, titre4);
         pstmt4.setString(3, annee4);
+        pstmt4.setString(4, "Complot");
         pstmt4.executeUpdate();
+        
         pstmt4.close();
         conn4.close();
     }
