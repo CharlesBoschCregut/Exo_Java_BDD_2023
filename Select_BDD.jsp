@@ -47,7 +47,7 @@
     // Exemple de requête SQL
     String sql1 = "SELECT idFilm, titre, année FROM Film WHERE année > 2000 AND année < 2015";
     PreparedStatement pstmt1 = conn1.prepareStatement(sql1);
-    ResultSet rs1 = pstmt.executeQuery();
+    ResultSet rs1 = pstmt1.executeQuery();
 
     // Afficher les résultats (à adapter selon vos besoins)
     while (rs1.next()) {
@@ -79,7 +79,7 @@
         // Exemple de requête SQL
         String sql2 = "SELECT idFilm, titre, année FROM Film WHERE année = " + chaine;
         PreparedStatement pstmt2 = conn2.prepareStatement(sql2);
-        ResultSet rs2 = pstmt.executeQuery();
+        ResultSet rs2 = pstmt2.executeQuery();
 
         // Afficher les résultats (à adapter selon vos besoins)
         while (rs2.next()) {
@@ -115,7 +115,7 @@
         // Exemple de requête SQL
         String sql3 = "UPDATE Film SET titre = " + titre + " WHERE  idFilm = " + id + ")"; 
         PreparedStatement pstmt3 = conn3.prepareStatement(sql3);
-        ResultSet rs3 = pstmt.executeQuery();
+        ResultSet rs3 = pstmt3.executeQuery();
         // Fermer les ressources 
 
     }
