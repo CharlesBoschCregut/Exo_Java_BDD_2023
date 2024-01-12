@@ -42,7 +42,7 @@
 <p> La valeur est <% out.print(x); %> </p>
 <%
     for(int i = 0; i < x; i++){
-       for(int j = 0; j < i; j++){
+       for(int j = 0; j < i + 1 ; j++){
           out.print("*");
        }
        %></br><%
@@ -85,7 +85,8 @@
            %>&nbsp;<%
         }
         for (int k = 1; k<=i; k++){
-           out.print("* ");
+           out.print("*");
+           %>&nbsp;<%
         }
         %></br><%
     }
