@@ -23,18 +23,18 @@
     
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
-<p> Chiffre 1 : : <% Integer.parseInt(tableauDeChiffres[0]); %> </p>
+<p> Chiffre 1 : : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
 <%
     out.println(Integer.parseInt(tableauDeChiffres[0]) * Integer.parseInt(tableauDeChiffres[0]));
 %>
 
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
-<p> Chiffre 1 : : <% Integer.parseInt(tableauDeChiffres[0]); %> </p>
-<p> Chiffre 2 : : <% Integer.parseInt(tableauDeChiffres[0]); %> </p>
+<p> Chiffre 1 : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
+<p> Chiffre 2 : <% out.println(Integer.parseInt(tableauDeChiffres[0])); %> </p>
 
 <%
-    out.println(Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChiffres[0]));
+    out.println(Integer.parseInt(tableauDeChiffres[0]) + Integer.parseInt(tableauDeChiffres[1]));
 %>
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
@@ -58,7 +58,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
         }
     }
 %>
-<p> La valeur maximum : <% out.println(res); %> </p>
+<p> La valeur maximum : <% out.println(max); %> </p>
 
 <h2>Exercice 5 : La valeur minimale</h2>
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
@@ -70,12 +70,12 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
         }
     }
 %>
-<p> La valeur minimale : <% out.println(res); %> </p>
+<p> La valeur minimale : <% out.println(min); %> </p>
 
 <h2>Exercice 6 : La valeur le plus proche de 0</h2>
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
 <%
-    int proche = 0;
+    int proche = Integer.parseInt(tableauDeChiffres[0]);
     for(int i = 0; i <= tableauDeChiffres.length - 1; i++){
        if (Math.abs(Integer.parseInt(tableauDeChiffres[i])) < Math.abs(proche)) {
           proche = Integer.parseInt(tableauDeChiffres[i]);
@@ -88,7 +88,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
 <p>En cas d'égalité entre un chiffre positif et négatif, affichez le chiffre positif</p>
 <%
-    int procheAbs = 0;
+    int procheAbs = Integer.parseInt(tableauDeChiffres[0]);
     for(int i = 0; i <= tableauDeChiffres.length - 1; i++){
        if (Math.abs(Integer.parseInt(tableauDeChiffres[i])) < Math.abs(procheAbs) ||
           (Math.abs(Integer.parseInt(tableauDeChiffres[i])) == Math.abs(procheAbs) && Integer.parseInt(tableauDeChiffres[i]) > procheAbs)) {
