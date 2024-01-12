@@ -14,7 +14,7 @@
 <%-- Récupération des valeurs --%>
     <% String valeur1 = request.getParameter("valeur1"); %>
     <% String valeur2 = request.getParameter("valeur2"); %>
-    <% String valeur3 = request.getParameter("valeurc"); %>
+    <% String valeur3 = request.getParameter("valeur3"); %>
 
     <%-- Vérification de la condition entre les deux valeurs --%>
     <% if (valeur1 != null && valeur2 != null && valeur3 != null) { %>
@@ -42,9 +42,9 @@ A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
     }
 
     if(res){
-       out.print("Oui, la valeur C est entre la valeur A et la valeur B");
+       %> <p> <% out.print("Oui, la valeur C est entre la valeur A et la valeur B"); %> </p> <%
     } else {
-       out.print("Non, la valeur C n'est pas entre la valeur A et la valeur B");
+      %> <p> <%  out.print("Non, la valeur C n'est pas entre la valeur A et la valeur B"); %> </p> <%
     }
 %>
 
@@ -52,9 +52,9 @@ A, B et C et dites nous si la valeur de C est comprise entre A et B.</br>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 <%
     if(intValeur1%2 != 0){
-      out.print("A est IMPAIR");
+      %> <p> <% out.print("A est IMPAIR"); %> </p> <%
     } else {
-      out.print("A est PAIR");
+      %> <p> <% out.print("A est PAIR"); %> </p> <%
     }
 %>
 <% } %>
