@@ -139,20 +139,21 @@
     <p><input type="submit" value="Ajouter le film">
 </form>
 <%
-    String idFilm = request.getParameter("id4");
-    String titre = request.getParameter("titre4");
-    String annee = request.getParameter("annee4");
-    String genre = "complot";
-    if (idFilm != null && titre != null && annee != null && genre != null) {
+    String idFilm4 = request.getParameter("id4");
+    String titre4 = request.getParameter("titre4");
+    String annee4 = request.getParameter("annee4");
+    String genre4 = "complot";
+    if (idFilm4 != null && titre4 != null && annee4 != null && genre4 != null) {
         Connection conn4 = DriverManager.getConnection(url, user, password);
         String sql4 = "INSERT INTO Film (idFilm, titre, année, genre) VALUES (?, ?, ?, ?)";
-        PreparedStatement pstmt4 = conn.prepareStatement(sql4);
-        pstmt4.setString(1, idFilm);
-        pstmt4.setString(2, titre);
-        pstmt4.setString(3, annee);
-        pstmt4.setString(4, genre);     
+        PreparedStatement pstmt4 = conn4.prepareStatement(sql4);
+        pstmt4.setString(1, idFilm4);
+        pstmt4.setString(2, titre4);
+        pstmt4.setString(3, annee4);
+        pstmt4.setString(4, genre4);     
 
-        int rowsInserted = pstmt4.executeUpdate();
+        pstmt4.executeUpdate();
+
         pstmt4.close();
         conn4.close();
     }
