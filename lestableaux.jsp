@@ -42,7 +42,7 @@
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 <%
     int res = 0;
-    for(int i = 0; i <= tableauDeChiffres.length(); i++){
+    for(int i = 0; i <= tableauDeChiffres.length; i++){
        res = res + Integer.parseInt(tableauDeChiffres[i]);
     }
 %>
@@ -52,7 +52,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>Ecrire un programme pour afficher la valeur maximale saisie par l'utilisateur</p>
 <%
     int max = 0;
-     for(int i = 0; i <= tableauDeChiffres.length(); i++){
+     for(int i = 0; i <= tableauDeChiffres.length; i++){
         if(Integer.parseInt(tableauDeChiffres[i]) > max){
             max = Integer.parseInt(tableauDeChiffres[i]);
         }
@@ -64,7 +64,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>Ecrire un programme pour afficher la valeur minimale saisie par l'utilisateur</p>
 <%
     int min = 0;
-    for(int i = 0; i <= tableauDeChiffres.length(); i++){
+    for(int i = 0; i <= tableauDeChiffres.length; i++){
         if(Integer.parseInt(tableauDeChiffres[i]) < min){
             min = Integer.parseInt(tableauDeChiffres[i]);
         }
@@ -76,9 +76,9 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
 <%
     int proche = 0;
-    for(int i = 0; i <= tableauDeChiffres.length(); i++){
-       if (Math.abs(tableauDeChiffres[i]) < Math.abs(proche)) {
-          proche = tableauDeChiffres[i];
+    for(int i = 0; i <= tableauDeChiffres.length; i++){
+       if (Math.abs(Integer.parseInt(tableauDeChiffres[i])) < Math.abs(proche)) {
+          proche = Integer.parseInt(tableauDeChiffres[i]);
        }
     }
 %>
@@ -88,15 +88,15 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 <p>Trouvez la valeur la plus proche de 0 (chiffres positifs ou négatifs)</p>
 <p>En cas d'égalité entre un chiffre positif et négatif, affichez le chiffre positif</p>
 <%
-    int proche = 0;
-    for(int i = 0; i <= tableauDeChiffres.length(); i++){
-       if (Math.abs(tableauDeChiffres[i]) < Math.abs(proche) ||
-          (Math.abs(tableauDeChiffres[i]) == Math.abs(proche) && tableauDeChiffres[i] > proche)) {
-          proche = tableauDeChiffres[i];
+    int procheAbs = 0;
+    for(int i = 0; i <= tableauDeChiffres.length; i++){
+       if (Math.abs(Integer.parseInt(tableauDeChiffres[i])) < Math.abs(procheAbs) ||
+          (Math.abs(Integer.parseInt(tableauDeChiffres[i])) == Math.abs(procheAbs) && Integer.parseInt(tableauDeChiffres[i]) > procheAbs)) {
+          procheAbs = Integer.parseInt(tableauDeChiffres[i]);
        }
     }
-%>
-<p> La valeur la plus proche de 0 : <% out.println(proche); %> </p>
+%>  
+<p> La valeur la plus proche de 0 : <% out.println(procheAbs); %> </p>
 
 <% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
