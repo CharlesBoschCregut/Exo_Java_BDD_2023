@@ -142,10 +142,11 @@
     String idFilm = request.getParameter("idFilm");
     String titre = request.getParameter("titre");
     String annee = request.getParameter("annee");
+    String genre = "complot";
     if (idFilm != null && titre != null && annee != null && genre != null) {
         Connection conn4 = DriverManager.getConnection(url, user, password);
         String sql4 = "INSERT INTO Film (idFilm, titre, année, genre) VALUES (?, ?, ?, ?)";
-        PreparedStatement pstmt4 = conn.prepareStatement(sql4)
+        PreparedStatement pstmt4 = conn.prepareStatement(sql4);
         pstmt4.setString(1, idFilm);
         pstmt4.setString(2, titre);
         pstmt4.setString(3, annee);
