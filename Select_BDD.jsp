@@ -139,9 +139,9 @@
     <p><input type="submit" value="Ajouter le film">
 </form>
 <%
-    String idFilm = request.getParameter("idFilm");
-    String titre = request.getParameter("titre");
-    String annee = request.getParameter("annee");
+    String idFilm = request.getParameter("id4");
+    String titre = request.getParameter("titre4");
+    String annee = request.getParameter("annee4");
     String genre = "complot";
     if (idFilm != null && titre != null && annee != null && genre != null) {
         Connection conn4 = DriverManager.getConnection(url, user, password);
